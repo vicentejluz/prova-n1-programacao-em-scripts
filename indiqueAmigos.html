@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+      h2{
+        text-align: center;
+      }
+      form{
+        color: white;
+        font-family: arial;
+        font-weight: bold;
+      }
+      fieldset{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 12px;
+        width:50%;
+        height: 60%;
+        text-align: start;
+        border: 3px solid;
+      }      
+      a{
+        margin-left: 60%;
+        font-size: 16px;
+        color: white;
+      }
+      a:focus{
+        color: #0000FF;
+      }
+      #botao{
+        height: 30px;
+        width: 150px;
+        margin-top: 1%;
+        background: white;
+        font-style: arial;
+        border: 1px solid;
+        border-radius: 100px;
+      }
+      #botao:hover{
+      font-size: large;
+      font-family: arial;
+      color: black;
+      }
+    </style>
+  </head>
+  <body bgcolor="#373737">
+    <script Language="Javascript">
+      function Enviar(){
+        if (document.frm_cadastro.txt_cpf.value == "" || 
+              document.frm_cadastro.txt_nome.value == "" ||
+                document.frm_cadastro.txt_endereco.value == "" || 
+                  document.frm_cadastro.cidades.value == "" || 
+                    document.frm_cadastro.sexo.value == false ||
+                      document.frm_cadastro.txt_email.value == ""){
+          alert("Preencha todos os campos!!");
+        }
+        else{
+          alert("Conta Criada");
+          Limpar();
+        }
+      }
+      function Limpar(){
+        const form = document.querySelector('form');
+        form.reset();
+      }
+    </script>
+      <form name="frm_cadastro">
+          <h2>FAÇA SEU CADASTRO E RECEBA NOVIDADES!</h2>
+          <fieldset>
+            <legend><b>DADOS PESSOAIS:</b></legend>
+            CPF:<br>
+            <input type="text" name="txt_cpf" size="30" maxlength="30"><br>
+            NOME DO CLIENTE:<br>
+            <input type="text" name="txt_nome" size="40" maxlength="40"><br>
+            ENDEREÇO:<br>
+            <input type="text" name="txt_endereco" size="40" maxlength="40"><br>
+            CIDADE:<br>
+            <select name="cidades">
+              <option value=""></option>
+              <option value="SBC">São Bernardo do Campo</option>
+              <option value="SA">Santo André</option>
+              <option value="SCS">São Caetano do Sul</option>
+              <option value="SP">São Paulo</option>
+            </select>&nbsp;&nbsp;
+            SEXO: 
+            <input type="radio" name="sexo">Masculino&nbsp;
+            <input type="radio" name="sexo">Feminino<br>
+            E-MAIL:<br>
+            <input type="email" name="txt_email" size="40" maxlength="40"><p>
+            <u>GÊNEROS DE FILMES DO SEU INTERESSE:</u><p>
+            <input type="checkbox" name="genero">Aventura
+            &ensp;&ensp;
+            <input type="checkbox" name="genero">Comédia
+            &ensp;&ensp;
+            <input type="checkbox" name="genero">Romance<br>
+            <input type="checkbox" name="genero">Ação
+            &ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;
+            <input type="checkbox" name="genero">Drama
+            &ensp;&ensp;&ensp;&ensp;
+            <input type="checkbox" name="genero">Suspense<p>
+            <a href="paginaInicial.html" target="menu">Voltar para a página 
+              inicial</a>
+          </fieldset>
+          
+          <center>
+            <input id="botao" type="button" value="ENVIAR" onclick="Enviar()">
+              &nbsp;&nbsp;
+            <input id="botao" type="button" value="LIMPAR" onclick="Limpar()">
+          </center>
+      </form>  
+  </body> 
+</html>

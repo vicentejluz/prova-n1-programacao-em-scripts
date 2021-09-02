@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Prova N1 - Vicente Luz</title>
+    <style type="text/css">
+      body{
+        margin: 0;
+        padding: 0;
+      }
+      .logo{
+        width: 100%;
+        height: 30%;
+        text-align: center;
+      }
+      .login{
+        background-color: #373737;
+        width: 100%;
+        height: 70%;
+      }
+      form{
+        color: white;
+        font-family: arial;
+      }
+      fieldset{
+        width: 20%;
+        height: 23%;
+        text-align: start;
+        border: 3px solid;
+      }
+      #botao{
+        height: 6%;
+        width: 6%;
+        background: grey;
+        font-style: arial;
+        border: 3px solid;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <script Language="Javascript">
+      function Enviar(){
+        var user = document.frm_login.txt_usuario.value;
+        var pass = document.frm_login.txt_senha.value;
+        if (document.frm_login.txt_usuario.value == "" || 
+              document.frm_login.txt_senha.value == ""){
+          alert("Preencha todos os campos!!");
+        }
+        else{
+          if((user == "admin" || user=="admin@admin.com") && pass=="admin"){
+            alert("Conta Logada com Sucesso!!!");
+            window.location="paginaInicial.html";
+          }
+          else{
+            alert("Usuário ou senha Inválido");
+            Limpar();
+          }
+        }
+      }
+      function Limpar(){
+        document.frm_login.txt_usuario.value="";
+        document.frm_login.txt_senha.value="";
+        document.frm_login.txt_usuario.focus();
+      }
+    </script>
+    <div class="logo">
+      <img src="./anexos/logo locadora.jpg">
+    </div>
+    <div class="login">
+      <form name="frm_login">
+        <center>
+          <br><b><h2>Área de Segurança</h2></b>
+          <fieldset>
+            <legend><b>Identificação do usuário:</b></legend>
+            Usuário ou E-mail:<br>
+            <input type="text" name="txt_usuario" value="" size="40" 
+            maxlength="40" required="yes"><br>
+            Senha:<br>
+            <input type="password" name="txt_senha" size="40" maxlength="40"
+            required="yes"><p>
+          </fieldset>
+          <br><input id="botao" type="button" value="Enviar" onclick="Enviar()">
+            &nbsp;&nbsp;
+          <input id="botao" type="button" value="Limpar" onclick="Limpar()">
+        </center>
+      </form>  
+    </div>
+  </body> 
+</html>
